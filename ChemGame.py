@@ -1,60 +1,47 @@
-import pygame as pg
-bg = pg.image.load('resize.png')
-
+import pygame 
+bg = pygame.transform.scale(pygame.image.load('bg.png'),(640,480))
+bg1 = pygame.transform.scale(pygame.image.load('bg.png'),(640,480))
+WALK =[pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w1.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w1.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w2.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w2.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w3.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w3.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w4.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w4.png")))]
+i = 0
+BG_LOC = [0,640]
 def main():
-
-    screen = pg.display.set_mode((640, 480))
-    font = pg.font.Font(None, 32)
-    clock = pg.time.Clock()
-    input_box = pg.Rect(200, 100, 140, 32)
-    color_inactive = pg.Color('lightskyblue3')
-    color_active = pg.Color('dodgerblue2')
-    color = color_inactive
-    active = True
+    global i
+    screen = pygame.display.set_mode((640, 480))
+    font = pygame.font.Font(None, 32)
+    clock = pygame.time.Clock()
     text = ''
     done = False
 
     while not done:
-        for event in pg.event.get():
-            if event.type == pg.QUIT:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
                 done = True
-            if event.type == pg.MOUSEBUTTONDOWN:
-                # If the user clicked on the input_box rect.
-				"""
-                if input_box.collidepoint(event.pos):
-                    # Toggle the active variable.
-                    active = not active
-                else:
-                    active = False
-                # Change the current color of the input box.
-                color = color_active if active else color_inactive
-				"""
-            if event.type == pg.KEYDOWN:
-                if active:
-                    if event.key == pg.K_RETURN:
+
+            if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
                         print(text)
                         text = ''
-                    elif event.key == pg.K_BACKSPACE:
+                    elif event.key == pygame.K_BACKSPACE:
                         text = text[:-1]
                     else:
                         text += event.unicode
 
-        screen.fill((0, 0, 255))
-        # Render the current text.
-        txt_surface = font.render(text, True, color)
-        # Resize the box if the text is too long.
-        width = max(200, txt_surface.get_width()+10)
-        input_box.w = width
-        # Blit the text.
-        screen.blit(txt_surface, (input_box.x+5, input_box.y+5))
-        # Blit the input_box rect.
-        pg.draw.rect(screen, color, input_box, 2)
-
-        pg.display.flip()
+        screen.blit(bg, (BG_LOC[0],0))
+        screen.blit(bg1, (BG_LOC[1],0))
+        if BG_LOC[0] <= -640:
+        	BG_LOC[0] = 0
+        if BG_LOC[1] == 0:
+        	BG_LOC[1] = 640
+        BG_LOC[0] -= 5
+        BG_LOC[1] -= 5
+        screen.blit(WALK[i], (100,300))
+        pygame.display.flip()
         clock.tick(30)
-
+        i +=1
+        if i == 8:
+        	i = 0
 
 if __name__ == '__main__':
-    pg.init()
+    pygame.init()
     main()
-    pg.quit()
+    pygame.quit()
