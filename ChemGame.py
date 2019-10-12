@@ -1,11 +1,17 @@
-import pygame 
-bg = pygame.transform.scale(pygame.image.load('bg.png'),(640,480))
-bg1 = pygame.transform.scale(pygame.image.load('bg.png'),(640,480))
-WALK =[pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w1.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w1.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w2.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w2.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w3.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w3.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w4.png"))),pygame.transform.scale2x(pygame.transform.scale2x(pygame.image.load("w4.png")))]
+import pygame
+
+BG = pygame.transform.scale(pygame.image.load('BG.png'),(640,480))
+BG1 = pygame.transform.scale(pygame.image.load('BG.png'),(640,480))
+WALK =[pygame.image.load("w1.png"),pygame.image.load("w1.png"),pygame.image.load("w2.png"),pygame.image.load("w2.png"),pygame.image.load("w3.png"),pygame.image.load("w3.png")]
+GOOMBA = pygame.transform.scale(pygame.image.load("g.png"), (80,80))
 i = 0
 BG_LOC = [0,640]
+GX = 640
+
+
 def main():
     global i
+    global GX
     screen = pygame.display.set_mode((640, 480))
     font = pygame.font.Font(None, 32)
     clock = pygame.time.Clock()
@@ -26,19 +32,23 @@ def main():
                     else:
                         text += event.unicode
 
-        screen.blit(bg, (BG_LOC[0],0))
-        screen.blit(bg1, (BG_LOC[1],0))
+        screen.blit(BG, (BG_LOC[0],0))
+        screen.blit(BG1, (BG_LOC[1],0))
         if BG_LOC[0] <= -640:
         	BG_LOC[0] = 0
         if BG_LOC[1] == 0:
         	BG_LOC[1] = 640
+        if GX == 0:
+        	GX = 640
         BG_LOC[0] -= 5
         BG_LOC[1] -= 5
-        screen.blit(WALK[i], (100,300))
+        GX -= 5
+        screen.blit(WALK[i], (0,225))
+        screen.blit(GOOMBA, (GX,315))
         pygame.display.flip()
-        clock.tick(30)
+        clock.tick(24)
         i +=1
-        if i == 8:
+        if i == 6:
         	i = 0
 
 if __name__ == '__main__':
