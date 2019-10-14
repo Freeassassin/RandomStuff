@@ -7,18 +7,16 @@ walkcount = 0
 BG_LOC = [0,640,1280]
 GX = 1280
 screen = pygame.display.set_mode((1280, 480))
-screen1 = pygame.display.set_mode((1280, 480))
-font = pygame.font.Font("cour.ttf", 32)
+font = pygame.font.Font("cour.ttf", 31)
 input_box = pygame.Rect(100, 100, 140, 32)
 clock = pygame.time.Clock()
 text = ""
-question = "lithium bromide"
 done = False
 started = False	
-chem = font.render(question, True, (0,0,0))
 y = 225
 jumpcount = 25
 isjump= False
+quitted = False
 questions = [
 ("N2O","dinitrogen monoxide"),("S2F10","disulfur decafluoride"),
 ("CF","carbon monofluoride"),("Si3N4","trisilicon tetranitride"),
@@ -64,22 +62,54 @@ class button():
             
         return False
 
-start_button = button((225,225,0), 1280/2, 90, 160, 80, "Start Game")
-info_button = button((0,225,0), 1280/2, 90, 160, 80, "How To Play")
+start_B = button((0,225,0), 640, 90, 160, 80, "Start Game")
+info_B = button((225,225,0), 640, 200, 160, 80, "How To Play")
+quit_B = button((225,0,0), 640, 310, 160, 80, "Quit Game")
+back_B = button((225,0,0), 640, 310, 160, 80, "Back")
 
 while not started:
 	pos = pygame.mouse.get_pos()
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			started = True
-		if event.type == pygame.MOUSEBUTTONDOWN and start_button.isOver(pos):
+		if event.type == pygame.MOUSEBUTTONDOWN and start_B.isOver(pos):
 			started = True
-
+		if event.type == pygame.MOUSEBUTTONDOWN and quit_B.isOver(pos):
+			started = True
+			quitted = True
+		if event.type == pygame.MOUSEBUTTONDOWN and info_B.isOver(pos):
+			info = True
+			info_T = font.render("To play the game \t type the formula for the chemica named on top of the Goomba", True, (0,225,0), (0,0,0))
+			info_R = info_T.get_rect()
+			info_R.center = (1280/2,480/2)
+			while info:
+				pos = pygame.mouse.get_pos()
+				screen.blit(BG, (BG_LOC[0],0))
+				screen.blit(BG, (BG_LOC[1],0))
+				screen.blit(BG, (BG_LOC[2],0))
+				screen.blit(info_T,info_R)
+				back_B.draw(screen)
+				if BG_LOC[0] == -640:
+					BG_LOC[0] = 0
+				if BG_LOC[1] == 0:
+					BG_LOC[1] = 640
+				if BG_LOC[2] == 640:
+					BG_LOC[2] = 1280
+				BG_LOC[0] -= 5
+				BG_LOC[1] -= 5
+				BG_LOC[2] -= 5
+				pygame.display.flip()
+				for event in pygame.event.get():
+					if event.type == pygame.MOUSEBUTTONDOWN and back_B.isOver(pos):
+						info = False
+				clock.tick(15)
+			break			
 	screen.blit(BG, (BG_LOC[0],0))
 	screen.blit(BG, (BG_LOC[1],0))
 	screen.blit(BG, (BG_LOC[2],0))
-	start_button.draw(screen)
-	screen.blit
+	start_B.draw(screen)
+	info_B.draw(screen)
+	quit_B.draw(screen)
 	if BG_LOC[0] == -640:
 		BG_LOC[0] = 0
 	if BG_LOC[1] == 0:
@@ -91,68 +121,80 @@ while not started:
 	BG_LOC[2] -= 5			
 	pygame.display.flip()
 	clock.tick(15)
- 
-for i in questions:
-	chem = font.render(i[1], True, (0,0,0))
-	done = False
-	while not done:
-		answer = font.render(text, True, (0,0,0))
-		
+if not quitted:
 
-		for event in pygame.event.get():
-			if event.type == pygame.QUIT:
-				done = True
+	for i in questions:
+		chem = font.render(i[1], True, (0,0,0))
+		done = False
+		while not done:
+			pos = pygame.mouse.get_pos()
+			answer = font.render(text, True, (0,0,0))
+			
 
-			if event.type == pygame.KEYDOWN:
-				if event.key == pygame.K_ESCAPE:
-					paused = True
-					while paused:
-						pass
-				if event.key == pygame.K_RETURN:
-					
-					if text == i[0]:
-						isjump = True
-						done = True
-					text = ''
-				elif event.key == pygame.K_BACKSPACE:
-					text = text[:-1]
+			for event in pygame.event.get():
+				if event.type == pygame.QUIT:
+					done = True
+
+				if event.type == pygame.KEYDOWN:
+					if event.key == pygame.K_ESCAPE:
+						paused = True
+						while paused:
+							pos = pygame.mouse.get_pos()
+							start_B.draw(screen)
+							quit_B.draw(screen)
+							pygame.display.flip()
+							for event in pygame.event.get():
+								if event.type == pygame.MOUSEBUTTONDOWN and start_B.isOver(pos):
+									paused = False	
+								if event.type == pygame.MOUSEBUTTONDOWN and quit_B.isOver(pos):
+									pass
+							clock.tick(15)
+						break						
+					if event.key == pygame.K_RETURN:
+						
+						if text == i[0]:
+							isjump = True
+							done = True
+						text = ''
+					elif event.key == pygame.K_BACKSPACE:
+						text = text[:-1]
+					else:
+						text += event.unicode
+			answer = font.render(text, True, (0,0,0))
+			
+			
+			if BG_LOC[0] == -640:
+				BG_LOC[0] = 0
+			if BG_LOC[1] == 0:
+				BG_LOC[1] = 640
+			if BG_LOC[2] == 640:
+				BG_LOC[2] = 1280
+			if GX == 0:
+				GX = 1280
+			BG_LOC[0] -= 5
+			BG_LOC[1] -= 5
+			BG_LOC[2] -= 5
+			GX -= 5
+			screen.blit(BG, (BG_LOC[0],0))
+			screen.blit(BG, (BG_LOC[1],0))
+			screen.blit(BG, (BG_LOC[2],0))
+			if isjump:
+				if jumpcount >= -25:
+
+					y -= (jumpcount * abs(jumpcount)) * 0.05
+					jumpcount -= 1
 				else:
-					text += event.unicode
-		answer = font.render(text, True, (0,0,0))
-		
-		
-		if BG_LOC[0] == -640:
-			BG_LOC[0] = 0
-		if BG_LOC[1] == 0:
-			BG_LOC[1] = 640
-		if BG_LOC[2] == 640:
-			BG_LOC[2] = 1280
-		if GX == 0:
-			GX = 1280
-		BG_LOC[0] -= 5
-		BG_LOC[1] -= 5
-		BG_LOC[2] -= 5
-		GX -= 5
-		screen.blit(BG, (BG_LOC[0],0))
-		screen.blit(BG, (BG_LOC[1],0))
-		screen.blit(BG, (BG_LOC[2],0))
-		if isjump:
-			if jumpcount >= -25:
+					jumpcount = 25
+					isjump = False
 
-				y -= (jumpcount * abs(jumpcount)) * 0.05
-				jumpcount -= 1
-			else:
-				jumpcount = 25
-				isjump = False
-
-		screen.blit(WALK[walkcount], (0,y)) 
-		screen.blit(GOOMBA, (GX,315))
-		screen.blit(chem, (GX-20,300))
-		screen.blit(answer, (10,430))
-		pygame.display.flip()
-		clock.tick(15)
-		
-		walkcount +=1
-		if walkcount == 6:
-			walkcount = 0
+			screen.blit(WALK[walkcount], (0,y)) 
+			screen.blit(GOOMBA, (GX,315))
+			screen.blit(chem, (GX-20,300))
+			screen.blit(answer, (10,430))
+			pygame.display.flip()
+			clock.tick(15)
+			
+			walkcount +=1
+			if walkcount == 6:
+				walkcount = 0
 pygame.quit()
