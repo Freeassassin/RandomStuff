@@ -58,60 +58,94 @@ walkcount = 0
 jumpcount = 25
 
 while not started:
+
     pos = pygame.mouse.get_pos()
+    
     for event in pygame.event.get():
+        
         FONT1 = pygame.font.Font("cour.ttf", 16)
+        
         if event.type == pygame.QUIT:
+        
             started = True
             quitted = True
+        
         if event.type == pygame.MOUSEBUTTONDOWN and START_B.isOver(pos):
+        
             started = True
+        
         if event.type == pygame.MOUSEBUTTONDOWN and QUIT_B.isOver(pos):
+        
             started = True
             quitted = True
+        
         if event.type == pygame.MOUSEBUTTONDOWN and INFO_B.isOver(pos):
+            
             info = True
             info_T = FONT1.render("Type the formula of the chemical on top of the goomba to avoid them", True, (0,225,0), (0,0,0))
             info_R = info_T.get_rect()
             info_R.center = (1280/2,480/2)
+            
             while info:
+        
                 pos = pygame.mouse.get_pos()
                 SCREEN.blit(BG, (BG_LOC[0],0))
                 SCREEN.blit(BG, (BG_LOC[1],0))
                 SCREEN.blit(BG, (BG_LOC[2],0))
                 SCREEN.blit(info_T,info_R)
                 BACK_B.draw(SCREEN)
+        
                 if BG_LOC[0] == -640:
+        
                     BG_LOC[0] = 0
+        
                 if BG_LOC[1] == 0:
+        
                     BG_LOC[1] = 640
+        
                 if BG_LOC[2] == 640:
+        
                     BG_LOC[2] = 1280
+        
                 BG_LOC[0] -= 5
                 BG_LOC[1] -= 5
                 BG_LOC[2] -= 5
                 pygame.display.flip()
+        
                 for event in pygame.event.get():
+        
                     if event.type == pygame.QUIT:
+        
                         info = False
                         started = True
                         quitted = True
+        
                     if event.type == pygame.MOUSEBUTTONDOWN and BACK_B.isOver(pos):
+        
                         info = False
+        
                 CLOCK.tick(15)
             break            
+
     SCREEN.blit(BG, (BG_LOC[0],0))
     SCREEN.blit(BG, (BG_LOC[1],0))
     SCREEN.blit(BG, (BG_LOC[2],0))
     START_B.draw(SCREEN)
     INFO_B.draw(SCREEN)
     QUIT_B.draw(SCREEN)
+
     if BG_LOC[0] == -640:
+
         BG_LOC[0] = 0
+
     if BG_LOC[1] == 0:
+
         BG_LOC[1] = 640
+
     if BG_LOC[2] == 640:
+
         BG_LOC[2] = 1280
+
     BG_LOC[0] -= 5
     BG_LOC[1] -= 5
     BG_LOC[2] -= 5            
@@ -121,67 +155,102 @@ while not started:
 if not quitted:
 
     for question in QUESTIONS:
+
         chem = FONT.render(question[1], True, (0,0,0))
         done = False
         quitted = False
         walkcount = 0
         BG_LOC = [0,640,1280]
         GX = 1280
+
         while not done:
+
             pos = pygame.mouse.get_pos()
             answer = FONT.render(text, True, (0,0,0))
             
 
             for event in pygame.event.get():
+
                 if event.type == pygame.QUIT:
+
                     done = True
                     quitted = True
+
                 if event.type == pygame.KEYDOWN:
+
                     if event.key == pygame.K_ESCAPE:
+
                         paused = True
+
                         while paused:
+
                             pos = pygame.mouse.get_pos()
                             START_B.draw(SCREEN)
                             QUIT_B.draw(SCREEN)
                             pygame.display.flip()
+
                             for event in pygame.event.get():
+
                                 if event.type == pygame.MOUSEBUTTONDOWN and START_B.isOver(pos):
+
                                     paused = False    
+
                                 if event.type == pygame.MOUSEBUTTONDOWN and QUIT_B.isOver(pos):
+
                                     paused = False
                                     done = True
                                     quitted = True
+
                             CLOCK.tick(15)
+
                         break                        
+
                     if event.key == pygame.K_RETURN:
                         
                         if text == question[0]:
                             done = True
                         text = ''
+
                     elif event.key == pygame.K_BACKSPACE:
+
                         text = text[:-1]
+
                     else:
+
                         text += event.unicode
+
             answer = FONT.render(text, True, (0,0,0))
             
             
             if BG_LOC[0] == -640:
+
                 BG_LOC[0] = 0
+
             if BG_LOC[1] == 0:
+
                 BG_LOC[1] = 640
+
             if BG_LOC[2] == 640:
+
                 BG_LOC[2] = 1280
+
             if GX == 0:
+
                 GX = 1280
+
             walkcount +=1
+
             if walkcount == 6:
+
                 walkcount = 0
+
             BG_LOC[0] -= 5
             BG_LOC[1] -= 5
             BG_LOC[2] -= 5
             GX -= 5
 
             if GX == 90:
+
                 done = True
                 life -= 1
 
@@ -192,28 +261,42 @@ if not quitted:
             SCREEN.blit(GOOMBA, (GX,315))
             SCREEN.blit(chem, (GX-20,300))
             SCREEN.blit(answer, (10,430))
+
             for i in range(0,life):
+
                 SCREEN.blit(HEART, (1170-i*90,-20))
+
             pygame.display.flip()
             CLOCK.tick(15)
             
             if life == 0:
+
                 done =True
                 win = False
 
         if quitted:
+
             break
     
     if not quitted:
+
         FONT1 = pygame.font.Font("cour.ttf", 30)
+
         if win:
+
             info_T = FONT1.render("YOU WIN!!!", True, (0,225,0), (225,225,225))
+
         else:
+
             info_T = FONT1.render("YOU LOSE :'(", True, (0,225,0), (225,225,225))
+
         info_R = info_T.get_rect()
         info_R.center = (1280/2,480/2)
+
         for i in range(0,6):
+
             SCREEN.blit(info_T,info_R)
             CLOCK.tick(15)
             pygame.display.update()
+
 pygame.quit()
