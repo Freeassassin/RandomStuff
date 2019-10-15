@@ -57,7 +57,6 @@ quitted = False
 walkcount = 0
 jumpcount = 25
 
-
 while not started:
     pos = pygame.mouse.get_pos()
     for event in pygame.event.get():
