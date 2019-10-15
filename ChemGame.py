@@ -17,8 +17,12 @@ y = 225
 jumpcount = 25
 isjump= False
 quitted = False
+start_B = button((0,225,0), 640, 90, 160, 80, "Start Game")
+info_B = button((225,225,0), 640, 200, 160, 80, "How To Play")
+quit_B = button((225,0,0), 640, 310, 160, 80, "Quit Game")
+back_B = button((225,0,0), 640, 310, 160, 80, "Back")
 questions = [
-("N2O","dinitrogen monoxide"),("S2F10","disulfur decafluoride"),
+ ("N2O","dinitrogen monoxide"),("S2F10","disulfur decafluoride"),
 ("CF","carbon monofluoride"),("Si3N4","trisilicon tetranitride"),
 ("SbCl5","antimony pentachloride"),("P2O3","diphosphorus trioxide"),
 ("Br2","bromine gas"),("CO2","carbon dioxide"),("Cl2O8","dichlorine octoxide"),
@@ -62,11 +66,6 @@ class button():
             
         return False
 
-start_B = button((0,225,0), 640, 90, 160, 80, "Start Game")
-info_B = button((225,225,0), 640, 200, 160, 80, "How To Play")
-quit_B = button((225,0,0), 640, 310, 160, 80, "Quit Game")
-back_B = button((225,0,0), 640, 310, 160, 80, "Back")
-
 while not started:
 	pos = pygame.mouse.get_pos()
 	for event in pygame.event.get():
@@ -79,7 +78,7 @@ while not started:
 			quitted = True
 		if event.type == pygame.MOUSEBUTTONDOWN and info_B.isOver(pos):
 			info = True
-			info_T = font.render("To play the game \t type the formula for the chemica named on top of the Goomba", True, (0,225,0), (0,0,0))
+			info_T = font.render("", True, (0,225,0), (0,0,0))
 			info_R = info_T.get_rect()
 			info_R.center = (1280/2,480/2)
 			while info:
@@ -121,6 +120,7 @@ while not started:
 	BG_LOC[2] -= 5			
 	pygame.display.flip()
 	clock.tick(15)
+
 if not quitted:
 
 	for i in questions:
