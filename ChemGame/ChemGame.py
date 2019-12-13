@@ -13,7 +13,7 @@ class button():
         self.text = text
 
     def draw(self,win,outline=None):
-        #Call this method to draw the button on the SCREEN
+
         if outline:
             pygame.draw.rect(win, outline, (self.x-2,self.y-2,self.width+4,self.height+4),0)
             
@@ -204,7 +204,7 @@ if not quitted:
                                     done = True
                                     quitted = True
 
-                            CLOCK.tick(15)
+                            CLOCK.tick(60)
 
                         break                        
 
