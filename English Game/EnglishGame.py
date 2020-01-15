@@ -29,7 +29,7 @@ def drawMap():
 			print(testscene[i], end = CHARACTER)
 		elif testscene[i] == "\n":
 			print(testscene[i], end = "")
-		elif
+		#elif:
 		else:
 			print(testscene[i], end = " ")
 
