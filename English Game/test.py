@@ -1,6 +1,83 @@
-testscene = ["ACT","I,","SCENE","III.","A","heath","near","Forres.\nThunder.","Enter","the","three","Witches\nFirst","Witch\nWhere","hast","thou","been,","sister?\nSecond","Witch\nKilling","swine.\nThird","Witch\nSister,","where","thou?\nFirst","Witch\nA","sailor's","wife","had","chestnuts","in","her","lap,\nAnd","munch'd,","and","munch'd,","and","munch'd:--\n'Give","me,'","quoth","I:\n'Aroint","thee,","witch!'","the","rump-fed","ronyon","cries.\nHer","husband's","to","Aleppo","gone,","master","o'","the","Tiger:\nBut","in","a","sieve","I'll","thither","sail,\nAnd,","like","a","rat","without","a","tail,\nI'll","do,","I'll","do,","and","I'll","do.\nSecond","Witch\nI'll","give","thee","a","wind.\nFirst","Witch\nThou'rt","kind.\nThird","Witch\nAnd","I","another.\nFirst","Witch\nI","myself","have","all","the","other,\nAnd","the","very","ports","they","blow,\nAll","the","quarters","that","they","know\nI'","the","shipman's","card.\nI","will","drain","him","dry","as","hay:\nSleep","shall","neither","night","nor","day\nHang","upon","his","pent-house","lid;\nHe","shall","live","a","man","forbid:\nWeary","se'nnights","nine","times","nine\nShall","he","dwindle,","peak","and","pine:\nThough","his","bark","cannot","be","lost,\nYet","it","shall","be","tempest-tost.\nLook","what","I","have.\nSecond","Witch\nShow","me,","show","me.\nFirst","Witch\nHere","I","have","a","pilot's","thumb,\nWreck'd","as","homeward","he","did","come.\nDrum","within\n\nThird","Witch\nA","drum,","a","drum!\nMacbeth","doth","come.\nALL\nThe","weird","sisters,","hand","in","hand,\nPosters","of","the","sea","and","land,\nThus","do","go","about,","about:\nThrice","to","thine","and","thrice","to","mine\nAnd","thrice","again,","to","make","up","nine.\nPeace!","the","charm's","wound","up.\nEnter","MACBETH","and","BANQUO\n\nMACBETH\nSo","foul","and","fair","a","day","I","have","not","seen.\nBANQUO\nHow","far","is't","call'd","to","Forres?","What","are","these\nSo","wither'd","and","so","wild","in","their","attire,\nThat","look","not","like","the","inhabitants","o'","the","earth,\nAnd","yet","are","on't?","Live","you?","or","are","you","aught\nThat","man","may","question?","You","seem","to","understand","me,\nBy","each","at","once","her","chappy","finger","laying\nUpon","her","skinny","lips:","you","should","be","women,\nAnd","yet","your","beards","forbid","me","to","interpret\nThat","you","are","so.\nMACBETH\nSpeak,","if","you","can:","what","are","you?\nFirst","Witch\nAll","hail,","Macbeth!","hail","to","thee,","thane","of","Glamis!\nSecond","Witch\nAll","hail,","Macbeth,","hail","to","thee,","thane","of","Cawdor!\nThird","Witch\nAll","hail,","Macbeth,","thou","shalt","be","king","hereafter!\nBANQUO\nGood","sir,","why","do","you","start;","and","seem","to","fear\nThings","that","do","sound","so","fair?","I'","the","name","of","truth,\nAre","ye","fantastical,","or","that","indeed\nWhich","outwardly","ye","show?","My","noble","partner\nYou","greet","with","present","grace","and","great","prediction\nOf","noble","having","and","of","royal","hope,\nThat","he","seems","rapt","withal:","to","me","you","speak","not.\nIf","you","can","look","into","the","seeds","of","time,\nAnd","say","which","grain","will","grow","and","which","will","not,\nSpeak","then","to","me,","who","neither","beg","nor","fear\nYour","favours","nor","your","hate.\nFirst","Witch\nHail!\nSecond","Witch\nHail!\nThird","Witch\nHail!\nFirst","Witch\nLesser","than","Macbeth,","and","greater.\nSecond","Witch\nNot","so","happy,","yet","much","happier.\nThird","Witch\nThou","shalt","get","kings,","though","thou","be","none:\nSo","all","hail,","Macbeth","and","Banquo!\nFirst","Witch\nBanquo","and","Macbeth,","all","hail!\nMACBETH\nStay,","you","imperfect","speakers,","tell","me","more:\nBy","Sinel's","death","I","know","I","am","thane","of","Glamis;\nBut","how","of","Cawdor?","the","thane","of","Cawdor","lives,\nA","prosperous","gentleman;","and","to","be","king\nStands","not","within","the","prospect","of","belief,\nNo","more","than","to","be","Cawdor.","Say","from","whence\nYou","owe","this","strange","intelligence?","or","why\nUpon","this","blasted","heath","you","stop","our","way\nWith","such","prophetic","greeting?","Speak,","I","charge","you.\nWitches","vanish\n\nBANQUO\nThe","earth","hath","bubbles,","as","the","water","has,\nAnd","these","are","of","them.","Whither","are","they","vanish'd?\nMACBETH\nInto","the","air;","and","what","seem'd","corporal","melted\nAs","breath","into","the","wind.","Would","they","had","stay'd!\nBANQUO\nWere","such","things","here","as","we","do","speak","about?\nOr","have","we","eaten","on","the","insane","root\nThat","takes","the","reason","prisoner?\nMACBETH\nYour","children","shall","be","kings.\nBANQUO\nYou","shall","be","king.\nMACBETH\nAnd","thane","of","Cawdor","too:","went","it","not","so?\nBANQUO\nTo","the","selfsame","tune","and","words.","Who's","here?\nEnter","ROSS","and","ANGUS\n\nROSS\nThe","king","hath","happily","received,","Macbeth,\nThe","news","of","thy","success;","and","when","he","reads\nThy","personal","venture","in","the","rebels'","fight,\nHis","wonders","and","his","praises","do","contend\nWhich","should","be","thine","or","his:","silenced","with","that,\nIn","viewing","o'er","the","rest","o'","the","selfsame","day,\nHe","finds","thee","in","the","stout","Norweyan","ranks,\nNothing","afeard","of","what","thyself","didst","make,\nStrange","images","of","death.","As","thick","as","hail\nCame","post","with","post;","and","every","one","did","bear\nThy","praises","in","his","kingdom's","great","defence,\nAnd","pour'd","them","down","before","him.\nANGUS\nWe","are","sent\nTo","give","thee","from","our","royal","master","thanks;\nOnly","to","herald","thee","into","his","sight,\nNot","pay","thee.\nROSS\nAnd,","for","an","earnest","of","a","greater","honour,\nHe","bade","me,","from","him,","call","thee","thane","of","Cawdor:\nIn","which","addition,","hail,","most","worthy","thane!\nFor","it","is","thine.\nBANQUO\nWhat,","can","the","devil","speak","true?\nMACBETH\nThe","thane","of","Cawdor","lives:","why","do","you","dress","me\nIn","borrow'd","robes?\nANGUS\nWho","was","the","thane","lives","yet;\nBut","under","heavy","judgment","bears","that","life\nWhich","he","deserves","to","lose.","Whether","he","was","combined\nWith","those","of","Norway,","or","did","line","the","rebel\nWith","hidden","help","and","vantage,","or","that","with","both\nHe","labour'd","in","his","country's","wreck,","I","know","not;\nBut","treasons","capital,","confess'd","and","proved,\nHave","overthrown","him.\nMACBETH\n[Aside]","Glamis,","and","thane","of","Cawdor!\nThe","greatest","is","behind.\nTo","ROSS","and","ANGUS\n\nThanks","for","your","pains.\nTo","BANQUO\n\nDo","you","not","hope","your","children","shall","be","kings,\nWhen","those","that","gave","the","thane","of","Cawdor","to","me\nPromised","no","less","to","them?\nBANQUO\nThat","trusted","home\nMight","yet","enkindle","you","unto","the","crown,\nBesides","the","thane","of","Cawdor.","But","'tis","strange:\nAnd","oftentimes,","to","win","us","to","our","harm,\nThe","instruments","of","darkness","tell","us","truths,\nWin","us","with","honest","trifles,","to","betray's\nIn","deepest","consequence.\nCousins,","a","word,","I","pray","you.\nMACBETH\n[Aside]","Two","truths","are","told,\nAs","happy","prologues","to","the","swelling","act\nOf","the","imperial","theme.--I","thank","you,","gentlemen.\nAside\n\nCannot","be","ill,","cannot","be","good:","if","ill,\nWhy","hath","it","given","me","earnest","of","success,\nCommencing","in","a","truth?","I","am","thane","of","Cawdor:\nIf","good,","why","do","I","yield","to","that","suggestion\nWhose","horrid","image","doth","unfix","my","hair\nAnd","make","my","seated","heart","knock","at","my","ribs,\nAgainst","the","use","of","nature?","Present","fears\nAre","less","than","horrible","imaginings:\nMy","thought,","whose","murder","yet","is","but","fantastical,\nShakes","so","my","single","state","of","man","that","function\nIs","smother'd","in","surmise,","and","nothing","is\nBut","what","is","not.\nBANQUO\nLook,","how","our","partner's","rapt.\nMACBETH\n[Aside]","If","chance","will","have","me","king,","why,","chance","may","crown","me,\nWithout","my","stir.\nBANQUO\nNew","horrors","come","upon","him,\nLike","our","strange","garments,","cleave","not","to","their","mould\nBut","with","the","aid","of","use.\nMACBETH\n[Aside]","Come","what","come","may,\nTime","and","the","hour","runs","through","the","roughest","day.\nBANQUO\nWorthy","Macbeth,","we","stay","upon","your","leisure.\nMACBETH\nGive","me","your","favour:","my","dull","brain","was","wrought\nWith","things","forgotten.","Kind","gentlemen,","your","pains\nAre","register'd","where","every","day","I","turn\nThe","leaf","to","read","them.","Let","us","toward","the","king.\nThink","upon","what","hath","chanced,","and,","at","more","time,\nThe","interim","having","weigh'd","it,","let","us","speak\nOur","free","hearts","each","to","other.\nBANQUO\nVery","gladly.\nMACBETH\nTill","then,","enough.","Come,","friends."]
+FIGHT_1V1 = [
+"MACBETH          ",
+" o           o   ",
+"/|\|       |/|\  ",
+"/ \         / \  ",
+"                 "]
+FIGHT_1V2 = [
+"         ENEMIE 1",
+"             o   ",
+"           |/|\  ",
+"MACBETH     / \  ",
+" o               ",
+"/|\|     ENEMIE 2",
+"/ \          o   ",
+"           |/|\  ",
+"            / \  "]
+FIGHT_2V1 = [
+"MACBETH          ",
+" o               ",
+"/|\|             ",
+"/ \      ENEMIE 1",
+"BANQUO       o   ",
+" o         |/|\  ",
+"/|\|        / \  ",
+"/ \              "]
+FIGHT_2V2 = [
+"MACBETH  ENEMIE 1",
+" o           o   ",
+"/|\|       |/|\  ",
+"/ \         / \  ",
+"BANQUO   ENEMIE 2",
+" o           o   ",
+"/|\|       |/|\  ",
+"/ \         / \  "]
 
-
-lentraveled = len(testscene[testscene[7].find("\n") + 1:len(testscene[7])]) + 1
-
-print(lentraveled)
+MENU = [
+"=============================",
+"|            |              |",
+"| FIGHT      | HEALTH = %s |",
+"|            |              |",
+"| ITEM       |              |",
+"|            |              |",
+"| FLEE       |              |",
+"|            |              |",
+"============================="]
+FIGHT_MENU = [
+"=============================",
+"|            |              |",
+"| FIGHT      | STAB         |",
+"|            | MISS CHANCE =|",
+"|            | %s           |",
+"|            | DAMAGE = %s  |",
+"|            | SLASH        |",
+"|            | MISS CHANCE =|",
+"|            | %s  
+          |",
+"|            | DAMAGE = %s  |",
+"|            |              |",
+"============================="]
+ITEM_MENU = [
+"=============================",
+"|            |              |",
+"| ITEMS      | SMALL HEALTH |",
+"|            | = %s          |",
+"|            | LARGE HEALTH |",
+"|            | = %s          |",
+"|            |              |",
+"============================="]
+FLEE_MENU = [
+"=============================",
+"|            |              |",
+"| FLEE       | FLEE CAHNCE =|",
+"|            |              |",
+"|            | %s%           |", 
+"|            |              |",
+"|            |              |",
+"============================="]
+name = 100
+for i in FIGHT_MENU:
+    if "%s" in i:
+        print(i % name)
+    else:
+        print(i)
