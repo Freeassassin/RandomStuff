@@ -82,5 +82,3 @@ SCENES = [
 ["ACT","V,","SCENE","VI.","Dunsinane.","Before","the","castle."," \nDrum","and","colours.","Enter","MALCOLM,","SIWARD,","MACDUFF,","and","their","Army,","with","boughs"," \nMALCOLM"," \nNow","near","enough:","your","leafy","screens","throw","down."," \nAnd","show","like","those","you","are.","You,","worthy","uncle,"," \nShall,","with","my","cousin,","your","right-noble","son,"," \nLead","our","first","battle:","worthy","Macduff","and","we"," \nShall","take","upon","'s","what","else","remains","to","do,"," \nAccording","to","our","order."," \nSIWARD"," \nFare","you","well."," \nDo","we","but","find","the","tyrant's","power","to-night,"," \nLet","us","be","beaten,","if","we","cannot","fight."," \nMACDUFF"," \nMake","all","our","trumpets","speak;","give","them","all","breath,"," \nThose","clamorous","harbingers","of","blood","and","death.\n"],
 ["cx"]
 ]
-
-print(SCENES[0][1247])
