@@ -4,16 +4,12 @@ import keyboard
 import sys
 import os
 from pynput.keyboard import Key, Listener
-
 KEYBOARD = pynput.keyboard.Controller()
 MOUSE = pynput.mouse.Controller()
 URL = "https://tellonym.me/mulockconfessions"
 done = False
 while not done:
-	
-	
 	for i in range(0,40):
-
 		MOUSE.position = (50, 470)
 		MOUSE.click(pynput.mouse.Button.left, 1)
 		KEYBOARD.type("Im Bored In Physics")
@@ -29,7 +25,6 @@ while not done:
 		if keyboard.is_pressed('escape'):
 			done = True
 			break
-	
 	MOUSE.position = (1175, 545)
 	MOUSE.click(pynput.mouse.Button.left, 1)
 	MOUSE.position = (1175, 300)
