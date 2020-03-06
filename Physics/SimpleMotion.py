@@ -1,91 +1,112 @@
 import math
+import os
+clear = lambda : os.system('cls')
+
 try:
-	deltaT = int(input("please enter delata T: "))	
+	deltaT = float(input("please enter Δt: "))	
 except Exception as e:
 
 	deltaT = None
 
 
 try:
-	deltaD = int(input("please enter delata D: "))
+	deltaD = float(input("please enter Δd: "))
 except Exception as e:
 	deltaD = None
 
 
 try:
-	initialV = int(input("please enter initial V: "))
+	initialV = float(input("please enter Initial Velocity: "))
 	
 except Exception as e:
 	initialV = None
 try:
 		
-	finalV = int(input("please enter final V: "))
+	finalV = float(input("please enter Final Velocity: "))
 except Exception as e:
 	finalV = None
 try:
 	
-	a = int(input("please accelaration: "))
+	a = float(input("please enter Acceleration: "))
 except Exception as e:
 	a = None
 
 
+clear()
+
 
 if deltaD == None:
-
 	if a == None:
-			deltaD = ((initialV + finalV)/2)*deltaT
+		deltaD = ((initialV + finalV)/2)*deltaT
 	elif finalV == None:
-		deltaD = initialV*deltaT+(a*(deltaT^2))/2
+		deltaD = initialV*deltaT+(a*(deltaT*deltaT))/2
 	elif initialV == None:
-		deltaD = finalV*deltaT-(a*(deltaT^2))/2
+		deltaD = finalV*deltaT-(a*(deltaT*deltaT))/2
 	elif deltaT == None:
-		deltaD = (finalV^2-initialV^2)2*a
-
+		deltaD = ((finalV*finalV)-(initialV*initialV))/2*a
+	else:
+		deltaD = ((initialV + finalV)/2)*deltaT
 
 
 
 if finalV == None:
-
 	if a == None:
-		
-		finalV = 2*(deltaD/deltaT) - initialV
-
+		finalV = 2*(deltaD/deltaT)-initialV
 	elif initialV == None:
-
-		finalV = (deltaD + (a*(deltaT^2))/2)/deltaT
-	
+		finalV = (deltaD + (a*(deltaT*deltaT))/2)/deltaT
 	elif deltaT == None:
-
-		finalV = math.sqrt(initialV^2+2*a*deltaT)
-
+		finalV = math.sqrt((initialV*initialV)+2*a*deltaD)
 	elif deltaD == None:
-
 		finalV = initialV + a*deltaT
+	else:
+		finalV = initialV + a*deltaT
+
+
 
 if initialV == None:
 	if a == None:
-
 		initialV = 2*(deltaD/deltaT) - finalV
-
 	elif finalV == None:
-
-		initialV = (deltaD - (a*(deltaT^2))/2)/deltaT
-
+		initialV = (deltaD - (a*(deltaT*deltaT))/2)/deltaT
 	elif deltaD == None:
-
+		initialV = finalV - a*deltaT
+	elif deltaT == None:
+		initialV = math.sqrt((finalV*finalV)-2*a*deltaD)
+	else:
 		initialV = finalV - a*deltaT
 
-	elif deltaT == None:
 
-		initialV = math.sqrt(finalV^2-2*a*deltaD)
 
 if deltaT == None:
+	if a == None:
+		deltaT = deltaD/((finalV+initialV)/2) 
+	elif deltaD == None:
+		deltaT = (finalV - initialV)/a
+	elif initialV == None:
+		deltaT = (-(finalV)+math.sqrt((finalV*finalV)-4*((-a)/2)*(-deltaD)) )/(-a)
+	elif finalV == None:
+		deltaT = ((-initialV)+math.sqrt((initialV*initialV)-4*(a/2)*(-deltaD)) )/a
+	else:
+		deltaT = (finalV - initialV)/a
+
 
 	
 if a == None:
+	if deltaT == None:
+		a = ((finalV*finalV)-(initialV*initialV))/(2*deltaD)
+	elif deltaD == None:
+		a = (finalV-initialV)/deltaT
+	elif initialV == None:
+		a = -((2*(deltaD-(finalV*deltaT)))/(deltaT*deltaT))
+	elif finalV == None:
+		a = (2*(deltaD-(initialV*deltaT)))/(deltaT*deltaT)
+	else:
+		a = (finalV-initialV)/deltaT
 
-
-
-print(deltaD,deltaT,initialV,finalV,accelaration)
+print("Δd is equal to: ",deltaD)
+print("\nΔt is equal to: ",deltaT)
+print("\nInitial Velocity is equal to: ",initialV)
+print("\nFinal Velocity is equal to: ",finalV)
+print("\nAcceleration is equal to: ",a)
 
 
