@@ -1,6 +1,6 @@
 from time import sleep
 import pynput
-import keyboard
+#import keyboard
 import sys
 import os
 from pynput.keyboard import Key, Listener
