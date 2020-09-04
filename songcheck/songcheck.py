@@ -52,16 +52,72 @@ while results['next']:
 for album in albums:
     print(album['name'])
 
+uncommon = open("uncommon.txt", "r", encoding="utf8")
+uncommon = uncommon.read()
+exec(uncommon)
+print(uncommon[1])
+
+for i in range(0len(uncommon)):
+    print(uncommon[i])
+    choice = input()
+    if choice != "y":
+        uncommon.remove(uncommon[i])
+
+print(uncommon)
+main = open("main.txt", "r", encoding="utf8")
+main = main.read()
+exec(main)
+
+alltheshit = open("alltheshit.txt", "r", encoding="utf8")
+alltheshit = alltheshit.read()
+exec(alltheshit)
+
+def common(a,b): 
+    c = [value for value in a if value in b] 
+    return c
+
+bs = common(main,alltheshit)
+
+for i in bs:
+    for j in alltheshit:
+        if j == i:
+            alltheshit.remove(j)
+
+print(alltheshit) 
 drew_greschuk
 22tbacddrpftnbbxh4bmjegzi - adam
 224efvqg73lyqelwpyojzhs6y - hana
 """
+"""
+if len(sys.argv) > 3:
+    username = sys.argv[1]
+    playlist_id = sys.argv[2]
+    track_ids = sys.argv[3:]
+else:
+    print("Usage: %s username playlist_id track_id ..." % (sys.argv[0],))
+    sys.exit()
 
-def show_tracks(tracks):
+scope = 'playlist-modify-public'
+token = util.prompt_for_user_token(username, scope)
+
+if token:
+    sp = spotipy.Spotify(auth=token)
+    sp.trace = False
+    results = sp.user_playlist_add_tracks(username, playlist_id, track_ids)
+    print(results)
+else:
+    print("Can't get token for", username)
+"""
+"""
+x = []
+def show_tracks(tracks,playlist):
     for i, item in enumerate(tracks['items']):
         track = item['track']
-        print("   %d %32.32s %s" % (i, track['artists'][0]['name'],
-            track['name']))
+        try:  
+            #print(track['id'])
+            playlist.append(track['id'])
+        except:
+            print("error")
 
 
 if __name__ == '__main__':
@@ -77,18 +133,47 @@ if __name__ == '__main__':
     if token:
         sp = spotipy.Spotify(auth=token)
         playlists = sp.user_playlists(username)
+        
         for playlist in playlists['items']:
             if playlist['owner']['id'] == username:
-                print()
-                print(playlist['name'])
-                print ('  total tracks', playlist['tracks']['total'])
-                results = sp.playlist(playlist['id'],
-                    fields="tracks,next")
-                tracks = results['tracks']
-                show_tracks(tracks)
-                while tracks['next']:
-                    tracks = sp.next(tracks)
-                    show_tracks(tracks)
+                if playlist['name'] == "Main":
+                    print()
+                    print(playlist['name'])
+                    print ('  total tracks', playlist['tracks']['total'])
+                    results = sp.playlist(playlist['id'],
+                        fields="tracks,next")
+                    tracks = results['tracks']
+                    show_tracks(tracks,x)
+                    while tracks['next']:
+                        tracks = sp.next(tracks)
+                        show_tracks(tracks,x)
+                    print(x)
     else:
         print("Can't get token for", username)
+"""
+uncommon = open("uncommon.txt", "r", encoding="utf8")
+uncommon = uncommon.read()
+exec(uncommon)
 
+if len(sys.argv) > 3:
+    username = sys.argv[1]
+    playlist_id = sys.argv[2]
+    x = sys.argv[3:]
+
+else:
+    print("Usage: %s username playlist_id track_id ..." % (sys.argv[0],))
+    sys.exit()
+
+scope = 'playlist-modify-public'
+token = util.prompt_for_user_token(username, scope)
+
+if token:
+    sp = spotipy.Spotify(auth=token)
+    sp.trace = False
+    for i in range(1,7):
+        pass
+        #x = uncommon[0+((i-1)*100):i*100-1]
+    results = sp.user_playlist_add_tracks(username, playlist_id, x)
+    print(results)
+else:
+    print("Can't get token for", username)
